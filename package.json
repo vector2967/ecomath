@@ -1,15 +1,14 @@
     {
-      "name": "ecomath", // 프로젝트 이름 (원하는 대로 설정)
+      "name": "ecomath",
       "version": "1.0.0",
       "description": "Economic Math Report Website",
-      "main": "api/exchange.js", // Serverless Function 파일 경로 (Node.js 함수인 경우)
+      "main": "api/exchange.js",
       "scripts": {
-        "start": "vercel dev" // 로컬 개발용 스크립트 (선택 사항)
+        "start": "vercel dev"
       },
       "dependencies": {
-        "node-fetch": "^3.0.0" // <-- 이 라인을 추가합니다.
+        "node-fetch": "^3.0.0"
       },
       "devDependencies": {
-        // 필요한 개발 도구 (예: vercel cli)
       }
     }
