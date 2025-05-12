@@ -125,7 +125,7 @@ async function fetchExchangeRate() {
     latestRatesTableBody.innerHTML = '<tr><td colspan="5">데이터 로딩 중...</td></tr>'; // 테이블 초기화 메시지
 
     // 한국수출입은행 환율 API 엔드포인트
-    const apiEndpoint = `https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=PttOxw7s9jtrnvAsujxONfsLX5dAlju1&data=AP01`;
+    const apiEndpoint = `/api/exchange`;
 
     try {
         const response = await fetch(apiEndpoint);
