@@ -3,6 +3,7 @@
       "version": "1.0.0",
       "description": "Economic Math Report Website",
       "main": "api/exchange.js",
+      "type": "module",
       "scripts": {
         "start": "vercel dev"
       },
