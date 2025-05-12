@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이자 및 원리합계 계산기 - 경제수학 웹사이트</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>📈 이자 및 원리합계 계산기</h1>
+        <p>3113 신수민</p>
+         <nav>
+            <a href="index.html">메인 페이지로 돌아가기</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="interest-present-value">
+            <div class="section-header">
+                <h2>계산기</h2>
+            </div>
+            <div class="section-content">
+                <div class="feature">
+                    <h3>미래 가치 계산</h3>
+                    <p>원금 \(A\), 연이율 \(R\), 기간 \(n\)년 후의 미래 가치 \(S\)를 계산합니다.</p>
+                    <label for="principal-fv">원금 (A):</label>
+                    <input type="number" id="principal-fv" value="1000000" min="0"> 원<br><br>
+                    <label for="rate-fv">연이율 (R, %):</label>
+                    <input type="number" id="rate-fv" value="5" step="0.1" min="0"> %<br><br>
+                    <label for="time-fv">기간 (n, 년):</label>
+                    <input type="number" id="time-fv" value="10" min="0"> 년<br><br>
+
+                    <label for="compound-frequency">계산 방식:</label>
+                    <select id="compound-frequency">
+                        <option value="simple">단리</option>
+                        <option value="annual">연 복리</option>
+                        <option value="semi-annual">반기 복리</option>
+                        <option value="quarterly">분기 복리</option>
+                        <option value="monthly">월 복리</option>
+                        <option value="continuous">연속 복리</option>
+                    </select><br><br>
+
+                    <button class="button" onclick="calculateFutureValue()">미래 가치 계산</button>
+                    <p>미래 가치 (S): <span id="future-value"></span> 원</p>
+
+                    <hr>
+
+                    <h3>현재 가치 계산</h3>
+                    <p>미래 가치 \(S\), 연이율 \(R\), 기간 \(n\)년 후의 현재 가치 \(A\)를 계산합니다.</p>
+                    <label for="future-value-pv">미래 가치 (S):</label>
+                    <input type="number" id="future-value-pv" value="2000000" min="0"> 원<br><br>
+                    <label for="rate-pv">연이율 (R, %):</label>
+                    <input type="number" id="rate-pv" value="5" step="0.1" min="0"> %<br><br>
+                    <label for="time-pv">기간 (n, 년):</label>
+                    <input type="number" id="time-pv" value="10" min="0"> 년<br><br>
+
+                     <label for="discount-method">할인 방식:</label>
+                    <select id="discount-method">
+                        <option value="simple">단리 할인</option>
+                        <option value="compound">복리 할인 (연 복리 기준)</option>
+                         <option value="continuous">연속 복리 할인</option>
+                    </select><br><br>
+
+                    <button class="button" onclick="calculatePresentValue()">현재 가치 계산</button>
+                    <p>현재 가치 (A): <span id="present-value"></span> 원</p>
+
+                </div>
+            </div>
+
+            <div class="math-explanation">
+                <h3>개념 요약 &amp; 참고자료</h3>
+                <p><strong>단리:</strong> 원금에만 이자가 붙는 방식. 원리합계 \(S = A(1 + rn)\).</p>
+                <p><strong>복리:</strong> 원금과 이자의 합계에 이자가 붙는 방식. 원리합계 \(S = A(1 + r)^n\).</p>
+                <p><strong>연속복리:</strong> 이자 계산 주기가 무한히 짧아질 때의 복리. 미래 가치 \(A = P \cdot e^{Rn}\).</p>
+                <p><strong>현재가치:</strong> 미래 가치를 현재 시점의 가치로 환산한 값.</p>
+                <p><strong>교과서:</strong> II. 수열과 금융, II-1 이자와 원리합계 (p. 46-59), II-2 연속복리 (p. 62-67)</p>
+            </div>
+
+        </section>
+    </main>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            MathJax.typesetPromise();
+        });
+    </script>
+</body>
+</html>

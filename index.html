@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경제수학 - 3113 신수민</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+
+        .card-container a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        @media (max-width: 600px) {
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📘 경제수학 웹사이트</h1>
+        <p>3113 신수민</p>
+    </header>
+
+    <main>
+        <div class="card-container">
+            <a href="interest.html">
+                <div class="card">
+                    <p class="heading">📈 이자 및 원리합계 계산기</p>
+                    <p>단리, 복리, 연속복리 계산</p>
+                    <p>현재가치 계산</p>
+                </div>
+            </a>
+
+            <a href="exchange.html">
+                <div class="card">
+                    <p class="heading">🌍 실시간 환율 시각화 도구</p>
+                    <p>최신 환율 정보 조회</p>
+                    <p>한국수출입은행 API 활용</p>
+                </div>
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>
