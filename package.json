@@ -1,5 +1,5 @@
     {
-      "name": "ecomath-report", // 프로젝트 이름 (원하는 대로 설정)
+      "name": "ecomath", // 프로젝트 이름 (원하는 대로 설정)
       "version": "1.0.0",
       "description": "Economic Math Report Website",
       "main": "api/exchange.js", // Serverless Function 파일 경로 (Node.js 함수인 경우)
