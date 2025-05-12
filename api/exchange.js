@@ -1,17 +1,23 @@
 // /var/task/api/exchange.js 파일
 
-const https = require('https');
+// ESM에서는 require 대신 import를 사용합니다.
+// Node.js 내장 모듈도 import로 불러올 수 있습니다.
+import https from 'https';
+
+// node-fetch도 ESM이므로 정적 import로 불러옵니다.
+import fetch from 'node-fetch';
 
 export default async (req, res) => {
-  const { default: fetch } = await import('node-fetch');
-
   const apiEndpoint = `https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=PttOxw7s9jtrnvAsujxONfsLX5dAlju1&data=AP01`;
 
+  // SSL 인증서 검증을 비활성화하는 Agent를 생성합니다.
+  // !!! 보안 위험이 있으므로 운영 환경에서는 사용에 신중해야 합니다. !!!
   const agent = new https.Agent({
     rejectUnauthorized: false,
   });
 
   try {
+    // fetch 호출 시 agent 옵션을 추가합니다.
     const response = await fetch(apiEndpoint, { agent });
 
     if (!response.ok) {
